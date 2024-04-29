@@ -1,0 +1,288 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title> WeSee - a helper! </title>
+    <link rel="icon" href="/static/eyeslogo.png" type="image/x-icon">
+
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+	font-family: 'Georgia', serif;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+<!-- ---- -->
+
+
+<body class=" text-center text-dark bg-warning" >
+
+<!-- ---- -->
+
+
+
+
+<!-- ---- -->
+
+
+<header class="cover-container d-flex flex-column text-white py-0" style="background-color: #1C2833 ;" >
+
+<div class="mx-3 mt-3 mb-1" style=" height: 70px;" >
+
+<h2 class="float-md-start mb-0 fw-bold display-5 "> WeSee. </h2>
+
+<img class="d-block mx-auto mb-4 float-md-start" src="/static/image.png" alt="" width="100" height="60">
+
+<nav class="nav nav-masthead justify-content-center float-md-end">
+
+
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()">
+<button type="button" class = "btn btn-light px-3 me-md-3 gap-3 fw-bold" style = "background-color: #F7F9F9; height:50px; "> 
+<a class="nav-link" style="color: #17202A;" href="/"> Home </a> </button>
+</div>
+
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()">
+<button type="button" class = "btn btn-light px-3 me-md-3 gap-3 fw-bold" style="background-color: #F7F9F9; height:50px;"> 
+<a class="nav-link" style="color: #17202A;"  href="/about"> About </a>  </button>
+</div>
+ 
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()">      
+<button type="button" class = "btn btn-light px-3 gap-3 fw-bold" style = "background-color: #F7F9F9; height:50px; "> 
+<a class="nav-link" style="color: #17202A;" href="/contact"> Contact </a> </button>
+</div>
+      
+</nav>
+    
+</div>
+  
+</header>
+
+
+<!-- ---- -->
+
+
+
+<div style="height:60px;" > </div>
+
+
+<main>
+
+
+<!-- ---- -->
+
+
+
+<div style="height:60px;" > </div>
+
+
+<div class="container align-items-center rounded-3 border shadow-lg" style="background-color: #FCF3CF; width: 900px; font-family: 'Georgia', serif;">
+
+
+<br>
+
+<div>
+
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()"> 
+<p class="container fs-2 fw-bold mt-4 mb-2"> detect text from an uploaded image: </p>
+</div>
+</div> 
+
+<br>
+
+<hr style="border-bottom: 3px solid black;">
+
+<div class="row button-container mx-4 mt-4 py-3 align-items-center justify-content-center">
+
+<div class="col-sm-5 " >
+
+<form method="POST" action="/text-recognition" enctype="multipart/form-data">
+
+<label for="imageUpload" class="custom-file-upload align-items-center fs-5 mb-4">
+
+<input type="file" id="imageUpload" name="image" accept="image/*" style="background-color: #F39C12 ; height: 80px; width: 200px;">
+
+<span> 
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()"> 
+choose file 
+</div>
+</span> 
+</label>
+
+
+</div>
+
+
+<div class="col-sm-5">
+
+<button type="submit" class="custom-file-upload fs-5 justify-content-center mb-4" style="background-color: #F39C12 ; height: 80px; width: 250px;"> 
+ <span> 
+<div class="hover-target" onmouseover="startSpeaking(this)" onmouseout="stopSpeaking()"> 
+upload image
+</div>
+ </span> 
+
+</button>
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+<!-- ---- -->
+
+
+
+<div style="height:80px;" > </div>
+
+<div class="container  align-items-center rounded-3 border shadow-lg" style="background-color: #FCF3CF; width: 680px; font-family: 'Monaco', monospace; ">
+
+<div class = "mx-3 my-4">
+
+<p class="fs-5 fw-bold"> result: </p>
+
+<hr style="border-bottom: 3px solid black;">
+
+<br>    
+<p class="fs-4 fw-bold"> 
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if text %}
+        <p class="fw-bold" style="font-size: 30px;" > {{ text }} </p>
+
+    {% endif %}
+
+</p>
+
+
+<br>
+
+{% if text %}
+
+        <audio controls autoplay>
+            <source src="{{ url_for('serve_audio', filename='output_' + timestamp + '.mp3') }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    {% endif %}
+
+</div>
+
+</div>
+
+
+
+
+<!-- ---- -->
+
+
+
+
+
+<!-- ---- -->
+
+</main>
+
+<!-- ---- -->
+
+
+<style>
+    .custom-file-upload {
+        display: inline-block;
+        background-color: #F39C12;
+        padding: 8px 12px;
+	border: 3px;
+        cursor: pointer;
+	height: 80px;
+	width: 250px;
+	border-radius: 10px;
+
+    }
+
+    .custom-file-upload input[type="file"] {
+        display: none;
+    }
+
+    .custom-file-upload span {
+	color: black;
+        font-weight: bold;
+	display: inline-block;
+	margin-top: 18px;
+	margin-bottom: 25px;
+    }
+</style>
+
+
+<!-- ---- -->
+
+<div style="height:80px;" > </div>
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    let isSpeechPlaying = false;
+    let textToRead = '';
+
+    function startSpeaking(element) {
+      if (!isSpeechPlaying) {
+        textToRead = element.textContent;
+        responsiveVoice.speak(textToRead, 'UK English Female', {
+          rate: 0.7, // Adjust speech rate (0.5 for slower speech, 1 for normal)
+          onstart: () => {
+            isSpeechPlaying = true;
+          },
+          onend: () => {
+            isSpeechPlaying = false;
+          }
+        });
+      }
+    }
+
+    function stopSpeaking() {
+      if (isSpeechPlaying) {
+        responsiveVoice.cancel();
+        isSpeechPlaying = false;
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
