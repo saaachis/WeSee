@@ -1,4 +1,6 @@
-‘WeSee - A Helper for the Visually Impaired’ – Simply, a web application for individuals with low vision capabilities to excel in daily tasks.
+**‘WeSee - A Helper for the Visually Impaired’**
+
+Simply, a web application for individuals with low vision capabilities to excel in daily tasks.
 
 Video of complete execeution of project: https://drive.google.com/file/d/1porrbt0-UMHPqTRN3VeefBLsWTg0TSJW/view?usp=sharing
 
