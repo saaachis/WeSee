@@ -1,0 +1,11 @@
+Flask==2.0.2
+pytesseract==0.3.8
+torch==1.10.0
+opencv-python==4.5.4.60
+numpy==1.21.4
+Pillow==8.4.0
+matplotlib==3.5.0
+scipy==1.7.3
+scikit-learn==1.0.1
+imutils==0.5.4
+pyttsx3==2.90
